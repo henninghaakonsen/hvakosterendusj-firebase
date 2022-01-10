@@ -17,6 +17,8 @@ admin.initializeApp();
 
 export const hent_dagens_strompriser = functions.https.onRequest(
   async (_, res) => {
+    res.set("Access-Control-Allow-Origin", "*");
+
     const idag = new Date();
     const dato = idag.toISOString().substr(0, 10);
 
